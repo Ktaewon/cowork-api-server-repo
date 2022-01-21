@@ -77,5 +77,5 @@ app.delete('/api/members/:id', async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, ()=>{
-    console.log(`Server is listening at ${PORT}...`);
+    console.log(`Server is listening at ${process.env.PORT}...`);
 });
