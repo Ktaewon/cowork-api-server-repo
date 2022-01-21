@@ -10,6 +10,10 @@ const { Member } = db;
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('URL should contain /api/..');
+});
+
 app.get('/api/members' , async (req, res) => {
     const { team } = req.query;
     if (team) {
@@ -75,6 +79,8 @@ app.delete('/api/members/:id', async (req, res) => {
         res.status(404).send({message : 'There is no such with the id!'});
     }
 });
+
+
 
 app.listen(process.env.PORT || 3000, ()=>{
     console.log(`Server is listening at ${process.env.PORT}...`);
